@@ -21,15 +21,26 @@ export class AddTodoFormComponent implements OnInit {
   
   @Output() todoAdd: EventEmitter<Todo> = new EventEmitter();
   
-  
-  onSubmit(){
-    const todo ={
-      srno:1,
-      title:this.title,
-      desc:this.desc,
-      active: false
+  ifBlank(){
+    if(this.title == null){
+      alert("Please enter task name")
     }
-    this.todoAdd.emit(todo);
+  }
+
+  onSubmit(){
+    if(this.title == null){
+      alert("Please enter task name")
+    }
+    else{
+      
+      const todo ={
+        srno:1,
+        title:this.title,
+        desc:this.desc,
+        active: false
+      }
+      this.todoAdd.emit(todo);
+    }
   }
   
   constructor() { }
