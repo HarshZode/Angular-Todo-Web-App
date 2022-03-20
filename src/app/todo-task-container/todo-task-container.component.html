@@ -1,29 +1,46 @@
 <h1 class="my-2">Your Tasks</h1>
 
+<ng-template [ngIf]="this.todo.length ===0"  ><div style="padding-bottom: 138px">No Todos to Display</div></ng-template>
 
-<div *ngIf="this.todo.length ===0; else elseBlock" style="padding-bottom: 138px">No Todos To display</div>
-<ng-template #elseBlock>
 
-    <div *ngIf="this.todo.length ===1; else elseBlock" style="padding-bottom: 58px">
-        <div *ngFor="let todo of todo" class="my-1" >
-            <div class="d-inline">
-                <div class=" d-inline">
-                    <h2>{{todo.title}}</h2>
-                    <h5>{{todo.desc}} </h5>
-                    <button class="btn btn-danger" style="margin-bottom:15px;" (click)="OnDelete(todo)">delete</button>
+<div *ngIf="this.todo.length ===1; else elseBlock" >
+
+
+    <div *ngFor="let todo of todo" >
+        <div class="d-inline">
+            <div class="row container-fluid bg-transparent" style="padding-bottom: 108px">
+                <div class="col-12 col-md-9">
+                    <div class=" d-inline">
+                        <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
+                        <h5>{{todo.desc}} </h5>
+                    </div>
+                </div>
+                <div class="col-6 col-sm px-4 bg-transparent ">
+                    <button class="btn btn-primary align-center m-2" (click)="onDone(todo)">Done</button>
+                    <button class="btn btn-danger align-center " (click)="OnDelete(todo)">delete</button>
                 </div>
             </div>
+
         </div>
     </div>
-    <ng-template #elseBlock>
 
-    <div *ngFor="let todo of todo" class="my-1" >
-        <div class="d-inline">
-            <div class=" d-inline">
-                <h2>{{todo.title}}</h2>
-                <h5>{{todo.desc}} </h5>
-                <button class="btn btn-danger" style="margin-bottom:15px;" (click)="OnDelete(todo)">delete</button>
+</div>
+<ng-template #elseBlock>
+        <div *ngFor="let todo of todo" class="my-1">
+            <div class="d-inline" >
+                <div class="row container-fluid bg-transparent" style="padding-bottom: 10px;">
+                    <div class="col-12 col-md-9">
+                        <div class=" d-inline">
+                            <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
+                            <h5>{{todo.desc}} </h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm px-4 bg-transparent ">
+                        <button class="btn btn-primary align-center m-2" (click)="onDone(todo)">Done</button>
+                        <button class="btn btn-danger align-center " (click)="OnDelete(todo)">delete</button>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
 </ng-template>

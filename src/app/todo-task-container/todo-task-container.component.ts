@@ -17,21 +17,22 @@ export class TodoTaskContainerComponent implements OnInit {
 
   @Input() todo: Todo[];
   @Output() todoDelete : EventEmitter<Todo> = new EventEmitter();
+  @Output() todoDone : EventEmitter<Todo> = new EventEmitter();
 
   task: string;
 
-  ontasksubmit(){
-    console.log(this.task)
-  }
   
+  onDone(todo:Todo){
+    console.log(todo);
+    this.todoDone.emit(todo);
+  }
+
   OnDelete(todo:Todo){
     this.todoDelete.emit(todo); 
     console.log("Delete button was clicked");
   }
 
   constructor() { 
-
-
   }
 
   ngOnInit(): void {

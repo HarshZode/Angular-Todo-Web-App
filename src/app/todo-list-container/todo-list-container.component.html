@@ -5,10 +5,10 @@
 
 <div class="row container-fluid bg-transparent" >
     <div class="col-6 col-md-3 bg-transparent"  id="test" style=" height: 230px; border-style: solid; border-radius: 6px; border-color: black ; margin: 4px;">
-        <app-add-todo-form (todoAdd)="AddTodo($event)"></app-add-todo-form>
+        <app-add-todo-form (todoAdd)="AddTodo($event)" ></app-add-todo-form>
     </div>
     <div class="col-12 col-xl px-4 bg-transparent"  id="test" style="vertical-align: top; border-style: solid; border-radius: 6px; border-color:black; margin: 4px;">
-        <app-todo-task-container [todo]="todos" (todoDelete)="deletetodo($event)"></app-todo-task-container>
+        <app-todo-task-container [todo]="todos" (todoDelete)="deletetodo($event)" (todoDone)="toggleTodo($event)"></app-todo-task-container>
     </div>
   </div>
 
