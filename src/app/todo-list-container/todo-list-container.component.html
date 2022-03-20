@@ -1,8 +1,13 @@
-<div class="row">
-    <div class="col-6 col-md-3">
+
+    
+<!-- background-color: #8ea1e1 -->
+<!-- background-color: #7289da -->
+
+<div class="row container-fluid bg-transparent" >
+    <div class="col-6 col-md-3 bg-transparent" style=" height: 230px; border-style: solid; border-radius: 6px; border-color: black ; margin: 4px;">
         <app-add-todo-form (todoAdd)="AddTodo($event)"></app-add-todo-form>
     </div>
-    <div class="col-12 col-md-8 px-4">
+    <div class="col-12 col-xl px-4 bg-transparent"style="vertical-align: top; border-style: solid; border-radius: 6px; border-color:black; margin: 4px;">
         <app-todo-task-container [todo]="todos" (todoDelete)="deletetodo($event)"></app-todo-task-container>
     </div>
   </div>
