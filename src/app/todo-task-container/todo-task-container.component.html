@@ -1,10 +1,23 @@
 <h1 class="my-2">Your Tasks</h1>
 
 
-<div *ngIf="this.todo.length ===0; else elseBlock">No Todos To display</div>
+<div *ngIf="this.todo.length ===0; else elseBlock" style="padding-bottom: 138px">No Todos To display</div>
 <ng-template #elseBlock>
 
-    <div *ngFor="let todo of todo" class="my-1">
+    <div *ngIf="this.todo.length ===1; else elseBlock" style="padding-bottom: 58px">
+        <div *ngFor="let todo of todo" class="my-1" >
+            <div class="d-inline">
+                <div class=" d-inline">
+                    <h2>{{todo.title}}</h2>
+                    <h5>{{todo.desc}} </h5>
+                    <button class="btn btn-danger" style="margin-bottom:15px;" (click)="OnDelete(todo)">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+
+    <div *ngFor="let todo of todo" class="my-1" >
         <div class="d-inline">
             <div class=" d-inline">
                 <h2>{{todo.title}}</h2>
