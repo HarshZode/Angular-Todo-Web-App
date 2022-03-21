@@ -7,6 +7,7 @@ import { TodoListContainerComponent } from './todo-list-container/todo-list-cont
 import { AddTodoFormComponent } from './add-todo-form/add-todo-form.component';
 import { TodoTaskContainerComponent } from './todo-task-container/todo-task-container.component';
 import { FormsModule } from '@angular/forms';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     TodoListContainerComponent,
     AddTodoFormComponent,
     TodoTaskContainerComponent,
+    ClockComponent,
   ],
   imports: [
     BrowserModule,

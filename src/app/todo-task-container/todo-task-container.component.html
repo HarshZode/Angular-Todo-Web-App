@@ -12,11 +12,11 @@
                 <div class="col-12 col-md-9">
                     <div class=" d-inline">
                         <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
-                        <h5>{{todo.desc}} </h5>
+                        <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
                     </div>
                 </div>
                 <div class="col-6 col-sm px-4 bg-transparent ">
-                    <button class="btn btn-primary align-center m-2" (click)="onDone(todo)">Done</button>
+                    <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center m-2" (click)="onDone(todo)">Done</button>
                     <button class="btn btn-danger align-center " (click)="OnDelete(todo)">delete</button>
                 </div>
             </div>
@@ -32,11 +32,11 @@
                     <div class="col-12 col-md-9">
                         <div class=" d-inline">
                             <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
-                            <h5>{{todo.desc}} </h5>
+                            <h5 [ngClass]="{'strike':todo.active}">{{todo.desc}} </h5>
                         </div>
                     </div>
                     <div class="col-6 col-sm px-4 bg-transparent ">
-                        <button class="btn btn-primary align-center m-2" (click)="onDone(todo)">Done</button>
+                        <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center m-2" (click)="onDone(todo)">Done</button>
                         <button class="btn btn-danger align-center " (click)="OnDelete(todo)">delete</button>
                     </div>
                 </div>

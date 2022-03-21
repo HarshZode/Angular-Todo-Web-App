@@ -28,7 +28,7 @@ export class AddTodoFormComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.title == undefined || this.title == '' || this.title == null){
+    if(this.title == undefined || this.title == '' || this.title == null || this.title==" " || this.title=='   ')  {
       alert("Please enter task name")
     }
     else{

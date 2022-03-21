@@ -1,3 +1,22 @@
 .strike{
     text-decoration: line-through;
 }
+
+.success{
+    border-style: solid;
+    border-radius: 6px;
+    
+    color: white;
+    background-color: #4CAF50;
+    
+}
+
+.pending{
+    border-style: solid;
+    border-radius: 6px;
+    
+    background-color: #008CBA;
+    color: white;
+    
+    
+}
