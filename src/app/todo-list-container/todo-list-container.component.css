@@ -1,6 +1,7 @@
 
 #test{
-    background: linear-gradient(-45deg, #fdb6a1, #bd8bff);
+    /* background: linear-gradient(-45deg, #fdb6a1, #bd8bff); */
+	background: linear-gradient(-45deg, rgb(179, 52, 218),rgb(238, 183, 169), rgb(184, 220, 235), rgb(68, 52, 218));
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100%;

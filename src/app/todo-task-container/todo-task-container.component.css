@@ -14,9 +14,15 @@
 .pending{
     border-style: solid;
     border-radius: 6px;
-    
     background-color: #008CBA;
     color: white;
-    
+}
+
+.todo-sections{
+    background-color: rgb(255,255,255,0.2);
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    border-color: rgb(255,255,255,0);
     
 }

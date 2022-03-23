@@ -1,46 +1,52 @@
 <h1 class="my-2">Your Tasks</h1>
-
-<ng-template [ngIf]="this.todo.length ===0"  ><div style="padding-bottom: 138px">No Todos to Display</div></ng-template>
+<div >
+<ng-template [ngIf]="this.todo.length ===0"  ><div style="padding-bottom: 138px;">No Todos to Display</div></ng-template>
 
 
 <div *ngIf="this.todo.length ===1; else elseBlock" >
 
 
     <div *ngFor="let todo of todo" >
-        <div class="d-inline">
-            <div class="row container-fluid bg-transparent" style="padding-bottom: 108px">
-                <div class="col-12 col-md-9">
-                    <div class=" d-inline">
-                        <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
-                        <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
+        <div class="d-inline"  >
+            <div style="padding-bottom: 108px;">
+                <div class="row container-fluid  todo-sections" >
+                    <div class="col-12 col-md-9 ">
+                        <div class=" d-inline">
+                            <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
+                            <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm px-4  ">
+                        <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center " style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="onDone(todo)">Done</button>
+                        <button class="btn btn-danger "  style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="OnDelete(todo)">delete</button>
                     </div>
                 </div>
-                <div class="col-6 col-sm px-4 bg-transparent ">
-                    <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center m-2" (click)="onDone(todo)">Done</button>
-                    <button class="btn btn-danger align-center " (click)="OnDelete(todo)">delete</button>
-                </div>
-            </div>
-
+        </div>
         </div>
     </div>
 
 </div>
 <ng-template #elseBlock>
-        <div *ngFor="let todo of todo" class="my-1">
-            <div class="d-inline" >
-                <div class="row container-fluid bg-transparent" style="padding-bottom: 10px;">
-                    <div class="col-12 col-md-9">
-                        <div class=" d-inline">
-                            <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
-                            <h5 [ngClass]="{'strike':todo.active}">{{todo.desc}} </h5>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm px-4 bg-transparent ">
-                        <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center m-2" (click)="onDone(todo)">Done</button>
-                        <button class="btn btn-danger align-center " (click)="OnDelete(todo)">delete</button>
+    <div *ngFor="let todo of todo" >
+        <div class="d-inline"  >
+            <div style="padding-bottom:23px;">
+            <div class="row container-fluid  todo-sections" >
+                <div class="col-12 col-md-9 ">
+                    <div class=" d-inline">
+                        <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
+                        <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
                     </div>
                 </div>
-
+                <div class="col-6 col-sm px-4  ">
+                    <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center " style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="onDone(todo)">Done</button>
+                    <button class="btn btn-danger "  style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="OnDelete(todo)">delete</button>
+                </div>
             </div>
         </div>
+        </div>
+    </div>
 </ng-template>
+
+
+
+</div>
