@@ -1,19 +1,27 @@
 <h1 class="my-2">Your Tasks</h1>
 <div >
-<ng-template [ngIf]="this.todo.length ===0"  ><div style="padding-bottom: 138px;">No Todos to Display</div></ng-template>
+<ng-template [ngIf]="this.todo.length ===0"  >
+    <div style="padding-bottom: 138px;">No Todos to Display</div>
+</ng-template>
 
 
 <div *ngIf="this.todo.length ===1; else elseBlock" >
 
 
-    <div *ngFor="let todo of todo" >
+    <div *ngFor="let todo of todo;let indexOfelement=index; " >
         <div class="d-inline"  >
             <div style="padding-bottom: 108px;">
                 <div class="row container-fluid  todo-sections" >
+                    <div class="col-sm-1" style="padding-top:23px">
+                       
+                    </div>
                     <div class="col-12 col-md-9 ">
+                        
                         <div class=" d-inline">
+                            
                             <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
                             <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
+                            <h6>{{indexOfelement+1}}</h6>
                         </div>
                     </div>
                     <div class="col-6 col-sm px-4  ">
@@ -27,14 +35,39 @@
 
 </div>
 <ng-template #elseBlock>
-    <div *ngFor="let todo of todo" >
+    <div *ngFor="let todo of todo;let indexOfelement=index" >
         <div class="d-inline"  >
             <div style="padding-bottom:23px;">
             <div class="row container-fluid  todo-sections" >
+                <div class="col-sm-1" style="padding-top:23px">
+                    
+                    <ng-template [ngIf]=""></ng-template>
+                    <div *ngIf="indexOfelement===0;  else fir">
+                        <i class="fa-solid fa-arrow-down" style="margin-top: 20px;" ></i>
+                    </div>
+                    
+                    <ng-template #fir>
+                        <ng-template [ngIf]="">
+                        </ng-template>
+                        <div *ngIf="indexOfelement!=x; else ye">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <br>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+                        <ng-template #ye >
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </ng-template>
+                        
+                    </ng-template>
+
+
+
+                </div>
                 <div class="col-12 col-md-9 ">
                     <div class=" d-inline">
                         <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
                         <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
+                        <h6>{{indexOfelement+1}}</h6>
                     </div>
                 </div>
                 <div class="col-6 col-sm px-4  ">
