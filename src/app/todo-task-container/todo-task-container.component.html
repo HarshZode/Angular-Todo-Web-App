@@ -15,16 +15,14 @@
                     <div class="col-sm-1" style="padding-top:23px">
                        
                     </div>
-                    <div class="col-12 col-md-9 ">
-                        
-                        <div class=" d-inline">
-                            
-                            <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
+                    <div class=" col " style="margin-right: 100px" >
+                        <div class=" d-inline" >
+                            <h2 [ngClass]="{'strike':todo.active}" >{{todo.title}}</h2>
                             <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
-                            <h6>{{indexOfelement+1}}</h6>
+                            
                         </div>
                     </div>
-                    <div class="col-6 col-sm px-4  ">
+                    <div class="col-1 col-sm-3 d-flex align-items-center" >
                         <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center " style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="onDone(todo)">Done</button>
                         <button class="btn btn-danger "  style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="OnDelete(todo)">delete</button>
                     </div>
@@ -39,7 +37,7 @@
         <div class="d-inline"  >
             <div style="padding-bottom:23px;">
             <div class="row container-fluid  todo-sections" >
-                <div class="col-sm-1" style="padding-top:23px">
+                <div class="col-sm-1 d-flex align-items-center" >
                     
                     <ng-template [ngIf]=""></ng-template>
                     <div *ngIf="indexOfelement===0;  else fir">
@@ -63,14 +61,14 @@
 
 
                 </div>
-                <div class="col-12 col-md-9 ">
-                    <div class=" d-inline">
-                        <h2 [ngClass]="{'strike':todo.active}">{{todo.title}}</h2>
+                <div class=" col " style="margin-right: 100px" >
+                    <div class=" d-inline" >
+                        <h2 [ngClass]="{'strike':todo.active}" >{{todo.title}}</h2>
                         <h5 [ngClass]="{'strike':todo.active}" >{{todo.desc}} </h5>
-                        <h6>{{indexOfelement+1}}</h6>
+                        
                     </div>
                 </div>
-                <div class="col-6 col-sm px-4  ">
+                <div class="col-1 col-sm-3 d-flex align-items-center" >
                     <button [ngClass]="{'success':todo.active,'pending':!todo.active}" class="btn align-center " style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="onDone(todo)">Done</button>
                     <button class="btn btn-danger "  style="margin-left:5px; margin-top:8px; margin-right:5px; margin-bottom: 5px;" (click)="OnDelete(todo)">delete</button>
                 </div>
