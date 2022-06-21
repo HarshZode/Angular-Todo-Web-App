@@ -43,19 +43,19 @@
                     
                     <ng-template [ngIf]=""></ng-template>
                     <div *ngIf="indexOfelement===0;  else fir">
-                        <i class="fa-solid fa-arrow-down" style="margin-top: 20px;" ></i>
+                        <i class="fa-solid fa-arrow-down"  (click)="on_down(todo,indexOfelement)" style="margin-top: 20px;" ></i>
                     </div>
                     
                     <ng-template #fir>
                         <ng-template [ngIf]="">
                         </ng-template>
                         <div *ngIf="indexOfelement!=x; else ye">
-                            <i class="fa-solid fa-arrow-up"></i>
+                            <i class="fa-solid fa-arrow-up" (click)="on_up(todo,indexOfelement)"></i>
                             <br>
-                            <i class="fa-solid fa-arrow-down"></i>
+                            <i class="fa-solid fa-arrow-down" (click)="on_down(todo,indexOfelement)"></i>
                         </div>
                         <ng-template #ye >
-                            <i class="fa-solid fa-arrow-up"></i>
+                            <i class="fa-solid fa-arrow-up" (click)="on_up(todo,indexOfelement)"></i>
                         </ng-template>
                         
                     </ng-template>

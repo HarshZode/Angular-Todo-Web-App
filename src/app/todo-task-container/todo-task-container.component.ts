@@ -21,11 +21,31 @@ export class TodoTaskContainerComponent implements OnInit {
   @Output() todoDone : EventEmitter<Todo> = new EventEmitter();
 
   task: string;
+  temp:Todo;
+  // selector: '#up'
+  // selector: 
 
   
+  on_up(todo:Todo,numb:number){
+   
+    console.log(this.todo[numb]);
+    this.temp = this.todo[numb]
+    this.todo[numb]=this.todo[numb-1]
+    this.todo[numb-1]=this.temp
+    localStorage.setItem("todos", JSON.stringify(this.todo))
+  }
+
+  on_down(todo:Todo,numb:number){
+   
+    console.log(this.todo[numb]);
+    this.temp = this.todo[numb]
+    this.todo[numb]=this.todo[numb+1]
+    this.todo[numb+1]=this.temp
+    localStorage.setItem("todos", JSON.stringify(this.todo))
+  }
 
   onDone(todo:Todo){
-   
+
     console.log(todo);
     this.todoDone.emit(todo);
     console.log("X ki value");
